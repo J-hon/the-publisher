@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "c4922420-e59f-4ae6-bf8b-a1ca14006967",
+		"name": "The Publisher",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10806538"
+	},
+	"item": [
+		{
+			"name": "subscribe",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\" : \"http://127.0.0.1:8002/api/test2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/subscribe/tech",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"subscribe",
+						"tech"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "subscribe",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\" : \"http://127.0.0.1:8002/api/test2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/subscribe/tech",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"subscribe",
+								"tech"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Nov 2022 14:53:02 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Nov 2022 14:53:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"url\": \"http://127.0.0.1:8002/api/test2\",\n    \"topic\": \"tech\"\n}"
+				}
+			]
+		},
+		{
+			"name": "publish",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\" : {\r\n        \"name\" : \"John Adekunle\",\r\n        \"phone_number\" : \"+2347038264523\",\r\n        \"sex\" : \"male\",\r\n        \"date_of_birth\" : {\r\n            \"month\" : \"July\",\r\n            \"day\" : 5 \r\n        },\r\n        \"message\" : \"Lorem Ipsum\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/publish/tech",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"publish",
+						"tech"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "publish",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\" : {\r\n        \"name\" : \"John Adekunle\",\r\n        \"phone_number\" : \"+2347038264523\",\r\n        \"sex\" : \"male\",\r\n        \"date_of_birth\" : {\r\n            \"month\" : \"July\",\r\n            \"day\" : 5 \r\n        },\r\n        \"message\" : \"Lorem Ipsum\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/publish/tech",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"publish",
+								"tech"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Nov 2022 14:54:23 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Nov 2022 14:54:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"topic\": \"tech\",\n    \"data\": {\n        \"name\": \"John Adekunle\",\n        \"phone_number\": \"+2347038264523\",\n        \"sex\": \"male\",\n        \"date_of_birth\": {\n            \"month\": \"July\",\n            \"day\": 5\n        },\n        \"message\": \"Lorem Ipsum\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
