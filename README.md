@@ -53,4 +53,4 @@ php artisan queue:work
 ### Endpoints
 A postman collection for the endpoints has been added
 
-[Notifier Collection](https://github.com/J-hon/the-publisher/blob/main/The_Publisher.postman_collection.json)
+[Notifier Collection](https://github.com/J-hon/the-publisher/blob/main/The%20Publisher.postman_collection.json)
