@@ -15,12 +15,10 @@ class SubscriptionController extends BaseController
 
     public function store(string $topic, SubscriptionRequest $request): JsonResponse
     {
-        $response = $this->subscriptionService->subscribe($request->validated(), $topic);
-        return $this->responseJson(
-            $response['status'],
-            $response['code'],
-            $response['message'],
-            $response['data']
-        );
+        $this->subscriptionService->subscribe($request->url, $topic);
+        return response()->json([
+            'url'   => $request->url,
+            'topic' => $topic
+        ]);
     }
 }

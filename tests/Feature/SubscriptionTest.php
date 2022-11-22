@@ -26,10 +26,8 @@ class SubscriptionTest extends TestCase
         $this->postJson('/api/subscribe/tech', $params)
             ->assertStatus(200)
             ->assertJson([
-                'data' => [
-                    'url'   => 'http://127.0.0.1:8001/api/test',
-                    'topic' => 'tech'
-                ]
+                'topic' => 'tech',
+                'url'   => 'http://127.0.0.1:8001/api/test',
             ]);
     }
 

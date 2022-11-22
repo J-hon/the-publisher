@@ -5,7 +5,6 @@ namespace App\Services;
 use App\Jobs\PublishMessageJob;
 use Illuminate\Redis\Connections\Connection;
 use Illuminate\Support\Facades\Redis;
-use Throwable;
 
 class PublisherService
 {
@@ -17,31 +16,12 @@ class PublisherService
         $this->redis = Redis::connection();
     }
 
-    public function publish(string $topic, array $params): array
+    public function publish(string $topic, array $message): bool
     {
-        try {
-            $subscribers = $this->redis->lRange($topic, 0, -1);
-            PublishMessageJob::dispatch($subscribers, $topic, $params['message']);
+        $subscribers = $this->redis->lRange($topic, 0, -1);
+        PublishMessageJob::dispatch($subscribers, $topic, $message);
 
-            return [
-                'status'  => true,
-                'message' => 'Publishing successful',
-                'code'    => 200,
-                'data'    => [
-                    'topic' => $topic,
-                    'data'  => $params['message']
-                ]
-            ];
-        }
-        catch (Throwable $th) {
-            report($th);
-            return [
-                'status'  => false,
-                'message' => 'Oops! An error occurred!',
-                'code'    => 400,
-                'data'    => []
-            ];
-        }
+        return true;
     }
 
 }

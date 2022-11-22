@@ -6,7 +6,7 @@ use App\Http\Requests\PublishMessageRequest;
 use App\Services\PublisherService;
 use Illuminate\Http\JsonResponse;
 
-class PublisherController extends BaseController
+class PublisherController extends Controller
 {
 
     public function __construct(protected PublisherService $publisherService)
@@ -15,13 +15,11 @@ class PublisherController extends BaseController
 
     public function store(PublishMessageRequest $request, $topic): JsonResponse
     {
-        $response = $this->publisherService->publish($topic, $request->validated());
-        return $this->responseJson(
-            $response['status'],
-            $response['code'],
-            $response['message'],
-            $response['data']
-        );
+        $this->publisherService->publish($topic, $request->validated());
+        return response()->json([
+            'topic' => $topic,
+            'data'  => $request->message
+        ]);
     }
 
 }

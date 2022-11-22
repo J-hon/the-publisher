@@ -4,7 +4,6 @@ namespace App\Services;
 
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Redis\Connections\Connection;
-use Throwable;
 
 class SubscriptionService
 {
@@ -16,41 +15,20 @@ class SubscriptionService
         $this->redis = Redis::connection();
     }
 
-    public function subscribe(array $params, string $topic): array
+    public function subscribe(string $url, string $topic): bool
     {
-        try {
-            $url = $params['url'];
+        if ($this->keyExists($topic)) {
+            $subscribers = $this->redis->lRange($topic, 0, -1);
 
-            if ($this->keyExists($topic)) {
-                $subscribers = $this->redis->lRange($topic, 0, -1);
-
-                if (!in_array($url, $subscribers)) {
-                    $this->addSubscriber($topic, $url);
-                }
-            }
-            else {
+            if (!in_array($url, $subscribers)) {
                 $this->addSubscriber($topic, $url);
             }
+        }
+        else {
+            $this->addSubscriber($topic, $url);
+        }
 
-            return [
-                'status'  => true,
-                'message' => 'Subscription successful',
-                'code'    => 200,
-                'data'    => [
-                    'url'   => $url,
-                    'topic' => $topic
-                ]
-            ];
-        }
-        catch (Throwable $th) {
-            report($th);
-            return [
-                'status'  => false,
-                'message' => 'Oops! An error occurred!',
-                'code'    => 400,
-                'data'    => []
-            ];
-        }
+        return true;
     }
 
     private function keyExists(string $key): bool

@@ -22,7 +22,9 @@ class PublishTest extends TestCase
     public function test_can_publish()
     {
         $params = [
-            'message' => 'Name is John Doe'
+            'message' => [
+                'key' => 'value'
+            ]
         ];
 
         Queue::fake();
@@ -30,9 +32,9 @@ class PublishTest extends TestCase
         $this->postJson('/api/publish/tech', $params)
             ->assertStatus(200)
             ->assertJson([
-                'data' => [
-                    'topic' => 'tech',
-                    'data'  => 'Name is John Doe'
+                'topic' => 'tech',
+                'data'  => [
+                    'key' => 'value'
                 ]
             ]);
 

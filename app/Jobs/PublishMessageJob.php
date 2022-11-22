@@ -17,7 +17,7 @@ class PublishMessageJob implements ShouldQueue
     use Queueable;
     use SerializesModels;
 
-    public function __construct(protected array $subscribers, protected string $topic, protected string $message)
+    public function __construct(protected array $subscribers, protected string $topic, protected array $message)
     {
     }
 
