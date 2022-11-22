@@ -36,7 +36,7 @@ class SubscriptionService
         return $this->redis->exists($key);
     }
 
-    private function addSubscriber($topic, $url): void
+    private function addSubscriber(string $topic, string $url): void
     {
         $this->redis->rPush($topic, $url);
     }

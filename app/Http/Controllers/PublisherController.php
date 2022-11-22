@@ -13,9 +13,9 @@ class PublisherController extends Controller
     {
     }
 
-    public function store(PublishMessageRequest $request, $topic): JsonResponse
+    public function store(PublishMessageRequest $request, string $topic): JsonResponse
     {
-        $this->publisherService->publish($topic, $request->validated());
+        $this->publisherService->publish($topic, $request->message);
         return response()->json([
             'topic' => $topic,
             'data'  => $request->message

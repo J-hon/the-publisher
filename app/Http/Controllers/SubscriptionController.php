@@ -6,7 +6,7 @@ use App\Http\Requests\SubscriptionRequest;
 use App\Services\SubscriptionService;
 use Illuminate\Http\JsonResponse;
 
-class SubscriptionController extends BaseController
+class SubscriptionController extends Controller
 {
 
     public function __construct(protected SubscriptionService $subscriptionService)

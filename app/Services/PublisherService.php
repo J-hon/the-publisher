@@ -16,7 +16,7 @@ class PublisherService
         $this->redis = Redis::connection();
     }
 
-    public function publish(string $topic, array $message): bool
+    public function publish(string $topic, mixed $message): bool
     {
         $subscribers = $this->redis->lRange($topic, 0, -1);
         PublishMessageJob::dispatch($subscribers, $topic, $message);

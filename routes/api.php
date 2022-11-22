@@ -19,5 +19,5 @@ use Illuminate\Support\Facades\Route;
 Route::post('subscribe/{topic}', [SubscriptionController::class, 'store']);
 Route::post('publish/{topic}', [PublisherController::class, 'store']);
 
-Route::post('test1', [SubscriberController::class, 'get']);
+Route::post('test1', [SubscriberController::class, 'get1']);
 Route::post('test2', [SubscriberController::class, 'get2']);

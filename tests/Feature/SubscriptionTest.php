@@ -20,14 +20,14 @@ class SubscriptionTest extends TestCase
     public function test_can_subscribe()
     {
         $params = [
-            'url' => 'http://127.0.0.1:8001/api/test'
+            'url' => 'http://127.0.0.1:8000/api/test'
         ];
 
         $this->postJson('/api/subscribe/tech', $params)
             ->assertStatus(200)
             ->assertJson([
                 'topic' => 'tech',
-                'url'   => 'http://127.0.0.1:8001/api/test',
+                'url'   => 'http://127.0.0.1:8000/api/test'
             ]);
     }
 

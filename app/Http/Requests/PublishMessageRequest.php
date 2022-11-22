@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\ObjectRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PublishMessageRequest extends FormRequest
@@ -15,7 +16,7 @@ class PublishMessageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'message' => ['required', 'array']
+            'message' => ['required', new ObjectRule()]
         ];
     }
 }

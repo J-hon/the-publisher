@@ -17,7 +17,7 @@ class PublishMessageJob implements ShouldQueue
     use Queueable;
     use SerializesModels;
 
-    public function __construct(protected array $subscribers, protected string $topic, protected array $message)
+    public function __construct(protected array $subscribers, protected string $topic, protected mixed $message)
     {
     }
 
@@ -26,7 +26,7 @@ class PublishMessageJob implements ShouldQueue
         foreach ($this->subscribers as $subscriber) {
             Http::post($subscriber, [
                 'topic' => $this->topic,
-                'data'  => $this->message
+                'data'  => (object) $this->message
             ]);
          }
     }
