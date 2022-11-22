@@ -38,7 +38,9 @@ Start the publisher server (you can use any port of your choice, pass your desir
 php artisan serve --port=8001
 ```
 
-Start the subscriber(s) server(s) (you can use any port of your choice, pass your desired port number after the --port=). Be sure the port is free.
+Start the subscriber(s) server(s) (you can use any port of your choice, pass your desired port number after the --port=). 
+
+**NB**: Be sure the port is free.
 
 ```sh
 php artisan serve --port=8002
