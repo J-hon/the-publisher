@@ -23,7 +23,7 @@ Clone the project, install the dependencies and dev dependencies.
 
 ```sh
 git clone https://github.com/J-hon/the-publisher
-cd notifier
+cd the-publisher
 composer install
 ```
 
@@ -53,4 +53,4 @@ php artisan queue:work
 ### Endpoints
 A postman collection for the endpoints has been added
 
-[Notifier Collection](https://github.com/J-hon/the-publisher/blob/main/The%20Publisher.postman_collection.json)
+[The Publisher Collection](https://github.com/J-hon/the-publisher/blob/main/The%20Publisher.postman_collection.json)
