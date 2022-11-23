@@ -52,6 +52,11 @@ Start queue (Or depending on your OS, you can configure a supervisor)
 php artisan queue:work
 ```
 
+Start the redis server
+```sh
+redis-server
+```
+
 ### Endpoints
 A postman collection for the endpoints has been added
 
